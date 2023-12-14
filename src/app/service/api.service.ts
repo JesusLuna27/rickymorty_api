@@ -13,4 +13,8 @@ export class ApiService {
   public getData(): Observable<any> {
     return this.http.get<any>(this.urlApi);
   }
+
+  public getCharacter(id: string | null): Observable<any> {
+    return this.http.get<any>(`${this.urlApi}/${id}`);
+  }
 }

@@ -1,31 +1,20 @@
 <div class="container">
-  <h2>The Rick and Morty API</h2>
-  <div class="character-grid">
-    <div class="character-card" *ngFor="let character of data">
-      <img [src]="character.image" alt="{{ character.name }}" />
-      <h3>{{ character.name }}</h3>
-      <p>
-        Estado: <span>{{ character.status }}</span>
-      </p>
-      <p>
-        Genero: <span>{{ character.gender }}</span>
-      </p>
-      <p>
-        Especie: <span>{{ character.species }}</span>
-      </p>
-      <p>
-        Origen: <span>{{ character.origin?.name }}</span>
-      </p>
-      <p>
-        Ultima Ubicación Conocida: <span>{{ character.location?.name }}</span>
-      </p>
-      <p>
-        Primera Aparicion En: <span>{{ character.episode[0] }}</span>
-      </p>
-      <p>
-        Creado en: <span>{{ character.created }}</span>
-      </p>
-      
+  <h1>Api Rick y Morty</h1>
+  <div class="card-container">
+    <div class="card" *ngFor="let character of data">
+      <img
+        [src]="character.image"
+        alt="{{ character.name }}"
+        class="card-image"
+      />
+      <div class="card-content">
+        <h2>{{ character.name }}</h2>
+        <p class="card-subtitle">{{ character.gender }}</p>
+        <p class="card-date">{{ character.created | date : "longDate" }}</p>
+        <a [routerLink]="['/character', character.id]" class="card-link"
+          >Ver Detalles</a
+        >
+      </div>
     </div>
   </div>
 </div>
