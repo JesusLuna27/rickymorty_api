@@ -8,7 +8,13 @@
         Estado: <span>{{ character.status }}</span>
       </p>
       <p>
+        Genero: <span>{{ character.gender }}</span>
+      </p>
+      <p>
         Especie: <span>{{ character.species }}</span>
+      </p>
+      <p>
+        Origen: <span>{{ character.origin?.name }}</span>
       </p>
       <p>
         Ultima Ubicación Conocida: <span>{{ character.location?.name }}</span>
@@ -16,6 +22,10 @@
       <p>
         Primera Aparicion En: <span>{{ character.episode[0] }}</span>
       </p>
+      <p>
+        Creado en: <span>{{ character.created }}</span>
+      </p>
+      
     </div>
   </div>
 </div>
